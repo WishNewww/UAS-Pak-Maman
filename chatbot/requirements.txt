@@ -1,6 +1,6 @@
 # =============================================================================
 # Regulasi Meteorologi Chatbot — Dependencies
-# Python 3.11+  |  Streamlit Community Cloud compatible
+# Python 3.11  |  Streamlit Community Cloud compatible
 # =============================================================================
 
 # -----------------------------------------------------------------------------
@@ -12,21 +12,15 @@ langchain-community==0.3.24
 langchain-google-genai==2.1.5
 
 # -----------------------------------------------------------------------------
-# Google Generative AI (LLM only)
-# Do NOT pin google-generativeai separately — causes dependency conflicts.
+# Local Embeddings — fastembed (ONNX-based, no torch, ~25 MB)
+# Supports Indonesian. Works on Python 3.11.
 # -----------------------------------------------------------------------------
+fastembed==0.4.1
 
 # -----------------------------------------------------------------------------
-# Local Embeddings — fastembed (no torch, no CUDA, ~15 MB install)
-# Uses ONNX runtime internally. Supports multilingual including Indonesian.
-# Model: BAAI/bge-small-en-v1.5 (fast, lightweight, good retrieval quality)
+# Vector Database — faiss-cpu with Python 3.11 wheel
 # -----------------------------------------------------------------------------
-fastembed==0.4.2
-
-# -----------------------------------------------------------------------------
-# Vector Database
-# -----------------------------------------------------------------------------
-faiss-cpu==1.11.0
+faiss-cpu==1.9.0
 
 # -----------------------------------------------------------------------------
 # Document Parsing
