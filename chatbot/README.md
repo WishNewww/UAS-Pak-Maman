@@ -214,7 +214,7 @@ git push
 3. Paste the following (replace values as needed):
 
 ```toml
-GEMINI_API_KEY            = "AQ.Ab8RN6KFQMk-qr8o_e1vH7IBznSFyc_cvo9wVDZkYc6jZt0_WA"
+GEMINI_API_KEY            = ***
 GEMINI_MODEL              = "gemini-2.5-flash-lite-preview-06-17"
 GEMINI_TEMPERATURE        = "0.2"
 GEMINI_MAX_OUTPUT_TOKENS  = "2048"
