@@ -97,7 +97,7 @@ Copy-Item .env.example .env
 Edit `.env` and set your values:
 
 ```env
-GEMINI_API_KEY=AQ.Ab8RN6KFQMk-qr8o_e1vH7IBznSFyc_cvo9wVDZkYc6jZt0_WA
+GEMINI_API_KEY=***
 GEMINI_MODEL=gemini-2.5-flash-lite-preview-06-17
 DATA_DIR=d:/Regulasi Internasional Meteorologi/UAS
 ```
