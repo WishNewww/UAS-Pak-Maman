@@ -35,7 +35,7 @@ import logging
 from typing import Optional
 
 from langchain.schema import AIMessage, BaseMessage, Document, HumanMessage
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 
 from config import AppConfig, GeminiConfig, MemoryConfig
 from prompt import (
@@ -54,15 +54,15 @@ logger = logging.getLogger("meteorologi_chatbot.rag")
 # LLM factory
 # ---------------------------------------------------------------------------
 
-def _build_llm() -> ChatGoogleGenerativeAI:
-    """Instantiate and return the Gemini LLM."""
+def _build_llm() -> ChatGroq:
+    """Instantiate and return the Groq LLM (free, open-source models)."""
     logger.info("Initialising LLM: %s", GeminiConfig.MODEL)
-    return ChatGoogleGenerativeAI(
+    return ChatGroq(
         model=GeminiConfig.MODEL,
-        google_api_key=GeminiConfig.API_KEY,
+        api_key=GeminiConfig.API_KEY,
         temperature=GeminiConfig.TEMPERATURE,
-        max_output_tokens=GeminiConfig.MAX_OUTPUT_TOKENS,
-        convert_system_message_to_human=False,
+        max_tokens=GeminiConfig.MAX_OUTPUT_TOKENS,
+        streaming=True,
     )
 
 
@@ -138,7 +138,7 @@ class RAGChain:
     """
 
     def __init__(self) -> None:
-        self._llm: Optional[ChatGoogleGenerativeAI] = None
+        self._llm: Optional[ChatGroq] = None
         self._retriever: Optional[MeteorologiRetriever] = None
         self._rag_prompt = build_rag_prompt()
         self._condense_prompt = build_condense_question_prompt()
@@ -148,7 +148,7 @@ class RAGChain:
     # ------------------------------------------------------------------
 
     @property
-    def llm(self) -> ChatGoogleGenerativeAI:
+    def llm(self) -> ChatGroq:
         if self._llm is None:
             self._llm = _build_llm()
         return self._llm
@@ -277,8 +277,8 @@ class RAGChain:
                 if hasattr(chunk, "content") and chunk.content:
                     yield chunk.content
         except Exception as exc:
-            logger.error("LLM streaming error: %s", exc)
-            yield "Maaf, terjadi kesalahan saat memproses permintaan Anda."
+            logger.error("LLM streaming error: %s", exc, exc_info=True)
+            yield f"Maaf, terjadi kesalahan LLM: {type(exc).__name__}: {str(exc)[:300]}"
 
         yield {"__done__": True, "sources": citation, "documents": documents}
 

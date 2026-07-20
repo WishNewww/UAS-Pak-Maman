@@ -84,13 +84,17 @@ def _get_float(key: str, default: float) -> float:
 
 
 # ===========================================================================
-# Google Gemini
+# Groq LLM  (free tier — https://console.groq.com/keys)
 # ===========================================================================
-class GeminiConfig:
-    API_KEY: str        = _require_secret("GEMINI_API_KEY")
-    MODEL: str          = _get_secret("GEMINI_MODEL", "gemini-2.5-flash-lite-preview-06-17")
-    TEMPERATURE: float  = _get_float("GEMINI_TEMPERATURE", 0.2)
-    MAX_OUTPUT_TOKENS: int = _get_int("GEMINI_MAX_OUTPUT_TOKENS", 2048)
+class GroqConfig:
+    API_KEY: str           = _require_secret("GROQ_API_KEY")
+    MODEL: str             = _get_secret("GROQ_MODEL", "llama-3.1-8b-instant")
+    TEMPERATURE: float     = _get_float("GROQ_TEMPERATURE", 0.2)
+    MAX_OUTPUT_TOKENS: int = _get_int("GROQ_MAX_OUTPUT_TOKENS", 2048)
+
+
+# Keep GeminiConfig as an alias so nothing else breaks
+GeminiConfig = GroqConfig
 
 
 # ===========================================================================
@@ -207,7 +211,8 @@ class PathConfig:
 # App-level bundle (convenience import)
 # ===========================================================================
 class AppConfig:
-    gemini    = GeminiConfig
+    gemini    = GroqConfig   # legacy name kept for compatibility
+    groq      = GroqConfig
     embedding = EmbeddingConfig
     faiss     = FAISSConfig
     data      = DataConfig
