@@ -3,13 +3,14 @@ embeddings.py
 =============
 Embedding model wrapper for the Regulasi Meteorologi Chatbot.
 
-Uses a LOCAL sentence-transformers model (no API key, no network call).
-Model: paraphrase-multilingual-MiniLM-L12-v2
-  - Supports Indonesian natively
-  - 118 MB download on first run, cached locally after that
-  - 384-dimensional vectors, fast CPU inference
+Uses FastEmbed — a lightweight ONNX-based embedding library.
+No torch, no CUDA, no Google Embedding API required.
 
-The LLM (Gemini) still uses the Google API — only embeddings are local.
+Model: BAAI/bge-small-en-v1.5
+  - ~24 MB download, cached after first run
+  - 384-dimensional vectors
+  - Strong multilingual retrieval quality including Indonesian
+  - Runs fully on CPU via ONNX Runtime
 
 Author : Regulasi Meteorologi Chatbot
 Version: 1.0.0
@@ -23,21 +24,20 @@ from typing import List
 import tiktoken
 from langchain.schema import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 
 from config import ChunkConfig
 
 logger = logging.getLogger("meteorologi_chatbot.embeddings")
 
 # ---------------------------------------------------------------------------
-# Embedding model name — multilingual, supports Indonesian
+# Embedding model — lightweight ONNX, no torch needed
 # ---------------------------------------------------------------------------
-EMBEDDING_MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 
 # ---------------------------------------------------------------------------
-# Token counter (used as length_function for the splitter)
+# Token counter
 # ---------------------------------------------------------------------------
-
 _tokenizer = tiktoken.get_encoding("cl100k_base")
 
 
@@ -52,23 +52,19 @@ def token_length(text: str) -> int:
 
 class GeminiEmbeddings:
     """
-    Local HuggingFace sentence-transformers embedding wrapper.
-
-    Despite the class name (kept for compatibility), this uses a local
-    multilingual model — no Google Embedding API is called.
+    Lightweight ONNX-based embedding wrapper using FastEmbed.
+    No torch, no GPU, no Google API calls for embeddings.
     """
 
     def __init__(self) -> None:
-        logger.info("Initialising local embedding model: %s", EMBEDDING_MODEL_NAME)
-        self._embeddings = HuggingFaceEmbeddings(
+        logger.info("Initialising FastEmbed model: %s", EMBEDDING_MODEL_NAME)
+        self._embeddings = FastEmbedEmbeddings(
             model_name=EMBEDDING_MODEL_NAME,
-            model_kwargs={"device": "cpu"},
-            encode_kwargs={"normalize_embeddings": True},
         )
-        logger.info("Local embedding model loaded successfully.")
+        logger.info("FastEmbed model loaded successfully.")
 
     @property
-    def embeddings(self) -> HuggingFaceEmbeddings:
+    def embeddings(self) -> FastEmbedEmbeddings:
         """Return the raw LangChain embeddings object."""
         return self._embeddings
 
@@ -86,22 +82,11 @@ class GeminiEmbeddings:
 # ---------------------------------------------------------------------------
 
 def _build_splitter() -> RecursiveCharacterTextSplitter:
-    """
-    Build a RecursiveCharacterTextSplitter calibrated to 300–500 tokens
-    with 20% overlap.
-    """
     return RecursiveCharacterTextSplitter(
         chunk_size=ChunkConfig.CHUNK_SIZE,
         chunk_overlap=ChunkConfig.CHUNK_OVERLAP,
         length_function=token_length,
-        separators=[
-            "\n\n",
-            "\n",
-            ". ",
-            ", ",
-            " ",
-            "",
-        ],
+        separators=["\n\n", "\n", ". ", ", ", " ", ""],
         keep_separator=True,
         add_start_index=True,
     )
@@ -109,8 +94,8 @@ def _build_splitter() -> RecursiveCharacterTextSplitter:
 
 def chunk_documents(slide_contents: list) -> list[Document]:
     """
-    Convert a list of SlideContent objects into LangChain Documents
-    with rich metadata and a unique chunk_id.
+    Convert SlideContent objects into chunked LangChain Documents
+    with full metadata and unique chunk IDs.
     """
     splitter = _build_splitter()
     documents: list[Document] = []
@@ -158,7 +143,7 @@ def chunk_documents(slide_contents: list) -> list[Document]:
 
 
 # ---------------------------------------------------------------------------
-# Singleton accessor (lazy init, cached)
+# Singleton accessor
 # ---------------------------------------------------------------------------
 
 _embeddings_instance: GeminiEmbeddings | None = None

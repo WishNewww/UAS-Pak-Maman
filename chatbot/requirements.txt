@@ -10,22 +10,18 @@ langchain==0.3.25
 langchain-core==0.3.65
 langchain-community==0.3.24
 langchain-google-genai==2.1.5
-langchain-huggingface==0.1.2
 
 # -----------------------------------------------------------------------------
-# Google Generative AI (LLM only — embeddings are local)
-# Do NOT pin google-generativeai or google-ai-generativelanguage separately.
+# Google Generative AI (LLM only)
+# Do NOT pin google-generativeai separately — causes dependency conflicts.
 # -----------------------------------------------------------------------------
-google-generativeai==0.8.0
 
 # -----------------------------------------------------------------------------
-# Local Embeddings — sentence-transformers
-# torch: CPU-only slim build keeps the install under Streamlit Cloud limits.
-# Install order matters: torch first, then sentence-transformers.
+# Local Embeddings — fastembed (no torch, no CUDA, ~15 MB install)
+# Uses ONNX runtime internally. Supports multilingual including Indonesian.
+# Model: BAAI/bge-small-en-v1.5 (fast, lightweight, good retrieval quality)
 # -----------------------------------------------------------------------------
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.5.1+cpu
-sentence-transformers==3.3.1
+fastembed==0.4.2
 
 # -----------------------------------------------------------------------------
 # Vector Database
