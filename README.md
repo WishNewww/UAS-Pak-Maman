@@ -1,1 +1,0 @@
-# UAS-Pak-Maman
