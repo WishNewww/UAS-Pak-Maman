@@ -1,0 +1,59 @@
+2026-07-20 21:39:26 | INFO     | meteorologi_chatbot.parser | PowerPointParser initialised. Data dir: d:\Regulasi Internasional Meteorologi\UAS
+2026-07-20 21:39:26 | INFO     | meteorologi_chatbot.parser | Discovered 6 .pptx file(s) in 'd:\Regulasi Internasional Meteorologi\UAS'
+2026-07-20 21:39:26 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 09_M8C_250526.pptx': 35 slide(s) extracted.
+2026-07-20 21:39:26 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 10_M8C_080626.pptx': 32 slide(s) extracted.
+2026-07-20 21:39:26 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 11_M8C_150626.pptx': 25 slide(s) extracted.
+2026-07-20 21:39:27 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 12_M8C_XX0626.pptx': 11 slide(s) extracted.
+2026-07-20 21:39:27 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 13_M8C_290626.pptx': 21 slide(s) extracted.
+2026-07-20 21:39:27 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 14_M8C_060726.pptx': 11 slide(s) extracted.
+2026-07-20 21:39:27 | INFO     | meteorologi_chatbot.embeddings | Chunking complete: 135 slide(s) → 135 chunk(s)
+2026-07-20 21:39:27 | INFO     | meteorologi_chatbot.embeddings | Initialising embedding model: models/text-embedding-004
+2026-07-20 21:41:59 | INFO     | meteorologi_chatbot.parser | PowerPointParser initialised. Data dir: d:\Regulasi Internasional Meteorologi\UAS
+2026-07-20 21:42:00 | INFO     | meteorologi_chatbot.parser | Discovered 6 .pptx file(s) in 'd:\Regulasi Internasional Meteorologi\UAS'
+2026-07-20 21:42:00 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 09_M8C_250526.pptx': 35 slide(s) extracted.
+2026-07-20 21:42:00 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 10_M8C_080626.pptx': 32 slide(s) extracted.
+2026-07-20 21:42:00 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 11_M8C_150626.pptx': 25 slide(s) extracted.
+2026-07-20 21:42:00 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 12_M8C_XX0626.pptx': 11 slide(s) extracted.
+2026-07-20 21:42:01 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 13_M8C_290626.pptx': 21 slide(s) extracted.
+2026-07-20 21:42:01 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 14_M8C_060726.pptx': 11 slide(s) extracted.
+2026-07-20 21:42:01 | INFO     | meteorologi_chatbot.embeddings | Chunking complete: 135 slide(s) → 135 chunk(s)
+2026-07-20 21:42:01 | INFO     | meteorologi_chatbot.embeddings | Initialising embedding model: models/text-embedding-004
+2026-07-20 21:44:07 | INFO     | meteorologi_chatbot.parser | PowerPointParser initialised. Data dir: d:\Regulasi Internasional Meteorologi\UAS
+2026-07-20 21:44:07 | INFO     | meteorologi_chatbot.parser | Discovered 6 .pptx file(s) in 'd:\Regulasi Internasional Meteorologi\UAS'
+2026-07-20 21:44:07 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 09_M8C_250526.pptx': 35 slide(s) extracted.
+2026-07-20 21:44:07 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 10_M8C_080626.pptx': 32 slide(s) extracted.
+2026-07-20 21:44:07 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 11_M8C_150626.pptx': 25 slide(s) extracted.
+2026-07-20 21:44:08 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 12_M8C_XX0626.pptx': 11 slide(s) extracted.
+2026-07-20 21:44:08 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 13_M8C_290626.pptx': 21 slide(s) extracted.
+2026-07-20 21:44:08 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 14_M8C_060726.pptx': 11 slide(s) extracted.
+2026-07-20 21:44:08 | INFO     | meteorologi_chatbot.embeddings | Chunking complete: 135 slide(s) → 135 chunk(s)
+2026-07-20 21:44:08 | INFO     | meteorologi_chatbot.embeddings | Initialising embedding model: models/text-embedding-004
+2026-07-20 21:46:45 | INFO     | meteorologi_chatbot.parser | PowerPointParser initialised. Data dir: d:\Regulasi Internasional Meteorologi\UAS
+2026-07-20 21:46:45 | INFO     | meteorologi_chatbot.parser | Discovered 6 .pptx file(s) in 'd:\Regulasi Internasional Meteorologi\UAS'
+2026-07-20 21:46:45 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 09_M8C_250526.pptx': 35 slide(s) extracted.
+2026-07-20 21:46:46 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 10_M8C_080626.pptx': 32 slide(s) extracted.
+2026-07-20 21:46:46 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 11_M8C_150626.pptx': 25 slide(s) extracted.
+2026-07-20 21:46:46 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 12_M8C_XX0626.pptx': 11 slide(s) extracted.
+2026-07-20 21:46:46 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 13_M8C_290626.pptx': 21 slide(s) extracted.
+2026-07-20 21:46:46 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 14_M8C_060726.pptx': 11 slide(s) extracted.
+2026-07-20 21:46:46 | INFO     | meteorologi_chatbot.embeddings | Chunking complete: 135 slide(s) → 135 chunk(s)
+2026-07-20 21:46:46 | INFO     | meteorologi_chatbot.embeddings | Initialising embedding model: models/embedding-001
+2026-07-20 21:55:41 | INFO     | meteorologi_chatbot.parser | PowerPointParser initialised. Data dir: d:\Regulasi Internasional Meteorologi\UAS
+2026-07-20 21:55:41 | INFO     | meteorologi_chatbot.parser | Discovered 6 .pptx file(s) in 'd:\Regulasi Internasional Meteorologi\UAS'
+2026-07-20 21:55:42 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 09_M8C_250526.pptx': 35 slide(s) extracted.
+2026-07-20 21:55:42 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 10_M8C_080626.pptx': 32 slide(s) extracted.
+2026-07-20 21:55:42 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 11_M8C_150626.pptx': 25 slide(s) extracted.
+2026-07-20 21:55:42 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 12_M8C_XX0626.pptx': 11 slide(s) extracted.
+2026-07-20 21:55:43 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 13_M8C_290626.pptx': 21 slide(s) extracted.
+2026-07-20 21:55:43 | INFO     | meteorologi_chatbot.parser | Parsed 'Regulasi Internasional Met 14_M8C_060726.pptx': 11 slide(s) extracted.
+2026-07-20 21:55:43 | INFO     | meteorologi_chatbot.embeddings | Chunking complete: 135 slide(s) → 135 chunk(s)
+2026-07-20 21:55:43 | INFO     | meteorologi_chatbot.embeddings | Initialising local embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-07-20 21:56:26 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-07-20 21:56:30 | WARNING  | huggingface_hub.file_download | Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2026-07-20 21:57:17 | WARNING  | huggingface_hub.file_download | Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2026-07-20 21:57:23 | INFO     | meteorologi_chatbot.embeddings | Local embedding model loaded successfully.
+2026-07-20 21:57:25 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-07-20 21:57:26 | INFO     | faiss.loader | Successfully loaded faiss with AVX2 support.
+2026-07-20 21:57:26 | INFO     | faiss | Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+2026-07-20 21:57:29 | INFO     | meteorologi_chatbot.build_index | FAISS index saved to: D:\Regulasi Internasional Meteorologi\chatbot\faiss
+2026-07-20 21:57:29 | INFO     | meteorologi_chatbot.build_index | Metadata saved to   : D:\Regulasi Internasional Meteorologi\chatbot\faiss\metadata.pkl
